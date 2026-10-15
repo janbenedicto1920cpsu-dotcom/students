@@ -12,6 +12,7 @@ export default function AuthenticatedLayout({ header, children }) {
         useState(false);
     
     const dashboardActive = route().current('dashboard');
+    const studentProfileActive = route().current('student-profile.show');
     const issuesActive = route().current('equipment-issues.index')
     const createActive = route().current('equipment-issues.create');
 
@@ -38,6 +39,13 @@ export default function AuthenticatedLayout({ header, children }) {
                                     active={dashboardActive}
                                 >
                                     Dashboard
+                                </NavLink>
+
+                                <NavLink
+                                    href={route('student-profile.show')}
+                                    active={studentProfileActive}
+                                >
+                                    Student Profile
                                 </NavLink>
 
                                 <NavLink
@@ -174,6 +182,13 @@ export default function AuthenticatedLayout({ header, children }) {
                             active={dashboardActive}
                         >
                             Dashboard
+                        </ResponsiveNavLink>
+
+                        <ResponsiveNavLink
+                            href={route('student-profile.show')}
+                            active={studentProfileActive}
+                        >
+                            Student Profile
                         </ResponsiveNavLink>
 
                         <ResponsiveNavLink
